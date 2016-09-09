@@ -85,3 +85,10 @@ RUN /usr/local/bin/mix local.hex --force && \
     /usr/local/bin/mix local.rebar --force
 
 WORKDIR /
+
+# Generate Dialyzer PLT
+RUN git clone https://github.com/jeremyjh/dialyxir
+WORKDIR /dialyxir
+RUN /usr/local/bin/mix dialyzer.plt
+
+WORKDIR /
