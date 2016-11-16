@@ -89,6 +89,7 @@ WORKDIR /
 # Generate Dialyzer PLT
 RUN git clone https://github.com/jeremyjh/dialyxir
 WORKDIR /dialyxir
+RUN git checkout v0.3.1
 RUN /usr/local/bin/mix dialyzer.plt
 
 WORKDIR /
